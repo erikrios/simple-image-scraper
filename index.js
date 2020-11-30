@@ -19,7 +19,7 @@ const google = new Scraper({ puppeteer: { headless: false } });
       const { filename } = await download.image(options);
       console.log("Saved to", filename);
     } catch (err) {
-      console.log(err.message);
+      console.error(err);
     }
   });
 })();
