@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "image-downloader": "^4.0.1",
     "images-scraper": "^5.0.7"
   }
 }
