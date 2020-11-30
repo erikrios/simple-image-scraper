@@ -9,14 +9,14 @@ const google = new Scraper({ puppeteer: { headless: false } });
 
 (async () => {
   const results = await google.scrape(keyword, limit);
-  results.forEach((e) => {
+  results.forEach(async (e) => {
     const options = {
       url: e.url,
       dest: destination,
     };
 
     try {
-      const { filename } = download.image(options);
+      const { filename } = await download.image(options);
       console.log("Saved to", filename);
     } catch (err) {
       console.log(err.message);
