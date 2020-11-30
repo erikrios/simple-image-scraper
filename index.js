@@ -1,9 +1,9 @@
 const Scraper = require("images-scraper");
 const download = require("image-downloader");
 
-const keyword = "banana";
+const keyword = "Banana";
 const limit = 10;
-const destination = "/home/erik1997/Pictures/WallpaperReog";
+const destination = "/home/erik1997/Pictures/WallpaperReog/Reog";
 
 const google = new Scraper({ puppeteer: { headless: false } });
 
@@ -19,7 +19,7 @@ const google = new Scraper({ puppeteer: { headless: false } });
       const { filename } = await download.image(options);
       console.log("Saved to", filename);
     } catch (err) {
-      console.error(err);
+      console.log(err.message);
     }
   });
 })();
