@@ -3,7 +3,7 @@ const download = require("image-downloader");
 
 const keyword = "banana";
 const limit = 10;
-const destination = "/home/erik1997/Pictures/Reog";
+const destination = "/home/erik1997/Pictures/WallpaperReog";
 
 const google = new Scraper({ puppeteer: { headless: false } });
 
