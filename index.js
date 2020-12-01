@@ -1,9 +1,9 @@
 const Scraper = require("images-scraper");
 const download = require("image-downloader");
 
-const keyword = "Wallpaper Reog";
-const limit = 200;
-const destination = "/home/erik1997/Pictures/WallpaperReog/Reog";
+const keyword = "warok";
+const limit = 150;
+const destination = "/home/erik1997/Pictures/WallpaperReog/Warok";
 
 const google = new Scraper({ puppeteer: { headless: false } });
 
@@ -17,6 +17,18 @@ const google = new Scraper({ puppeteer: { headless: false } });
       const options = {
         url: imageUrl,
         dest: `${destination}/image${index}${imageExtension}`,
+      };
+
+      try {
+        const { filename } = await download.image(options);
+        console.log("Saved to", filename);
+      } catch (err) {
+        console.log(err.message);
+      }
+    } else if (imageUrl.length <= 200) {
+      const options = {
+        url: imageUrl,
+        dest: destination,
       };
 
       try {
